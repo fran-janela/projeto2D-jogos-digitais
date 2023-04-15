@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Trigger
   layers:
   - Default
   - TransparentFX
@@ -11,7 +12,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Trigger Raycast
   - 
   - 
   - 
@@ -40,4 +41,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 946279377
+    locked: 0
+  - name: BehindPlayer
+    uniqueID: 3582719991
+    locked: 0
+  - name: Player
+    uniqueID: 127612273
+    locked: 0
+  - name: InFrontPlayer
+    uniqueID: 3994565049
+    locked: 0
+  - name: Triggers
+    uniqueID: 2234800683
+    locked: 0
+  - name: PopUps
+    uniqueID: 1288799351
     locked: 0
