@@ -11,6 +11,10 @@ public class DigitalDisplay : MonoBehaviour
 
     private string codeSequence;
 
+    public string codeToUnlock;
+
+    public GameObject uiInterface;
+
     void Start()
     {
         codeSequence = "";
@@ -129,9 +133,10 @@ public class DigitalDisplay : MonoBehaviour
 
     private void CheckCodeSequence()
     {
-        if (codeSequence == "1234")
+        if (codeSequence == codeToUnlock)
         {
             Debug.Log("Correct code sequence");
+            CloseInterface();
         }
         else
         {
@@ -143,6 +148,15 @@ public class DigitalDisplay : MonoBehaviour
     private void OnDestroy()
     {
         PushButtonKeyPad.OnButtonPressed -= AddDigitToCodeSequence;
+    }
+
+    private void CloseInterface()
+    {
+        codeSequence = "";
+        uiInterface.SetActive(false);
+
+        PlayerMovement.SetCurrentInteractable(null);
+        PlayerMovement.UnfreezePlayer();
     }
 
 
