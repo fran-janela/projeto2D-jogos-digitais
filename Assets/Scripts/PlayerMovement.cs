@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private static GameObject currentInteractable;
+
     public GameObject interactIcon;
 
     public float moveSpeed = 5f;
@@ -16,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 movement;
 
+    public static void SetCurrentInteractable(GameObject interactable)
+    {
+        currentInteractable = interactable;
+    }
+
     void Start()
     {
         interactIcon.SetActive(false);
@@ -27,6 +34,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             CheckInteraction();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && currentInteractable != null)
+        {
+            currentInteractable.SetActive(false);
+            UnfreezePlayer();
         }
 
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -76,6 +89,17 @@ public class PlayerMovement : MonoBehaviour
         interactIcon.SetActive(false);
     }
 
+    public void FreezePlayer()
+    {
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+    public static void UnfreezePlayer()
+    {
+        GameObject.Find("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        GameObject.Find("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
     private void CheckInteraction()
     {
         Vector2 direction = new Vector2(animator.GetFloat("LastHorizontal"), animator.GetFloat("LastVertical"));
@@ -87,6 +111,7 @@ public class PlayerMovement : MonoBehaviour
             if (hit.transform.GetComponent<Interactable>())
             {
                 hit.collider.GetComponent<Interactable>().Interact();
+                FreezePlayer();
             }
         }
     }
