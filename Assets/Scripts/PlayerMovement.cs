@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public Animator bodyAnimator;
 
+    public Collider2D interactCollider;
+
     private Vector2 movement;
 
     void Start()
@@ -40,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (movement.x != 0)
         {
+            interactCollider.offset = new Vector2(movement.x, -0.5f);
             animator.SetFloat("LastHorizontal", movement.x);
             animator.SetFloat("LastVertical", 0);
 
@@ -48,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (movement.y != 0)
         {
+            interactCollider.offset = new Vector2(0, movement.y - 0.5f);
             animator.SetFloat("LastHorizontal", 0);
             animator.SetFloat("LastVertical", movement.y);
 
@@ -75,7 +79,6 @@ public class PlayerMovement : MonoBehaviour
     private void CheckInteraction()
     {
         Vector2 direction = new Vector2(animator.GetFloat("LastHorizontal"), animator.GetFloat("LastVertical"));
-        Debug.DrawRay(transform.position, direction * 0.5f, Color.red);
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 0.5f, LayerMask.GetMask("Trigger Raycast"));
         if (hit)
