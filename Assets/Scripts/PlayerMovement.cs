@@ -14,7 +14,11 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public Animator bodyAnimator;
 
+
     public Collider2D interactCollider;
+
+    public GameObject flashlight;
+    private static bool flashlight_on = false;
 
     private Vector2 movement;
 
@@ -23,9 +27,10 @@ public class PlayerMovement : MonoBehaviour
         currentInteractable = interactable;
     }
 
-    void Start()
+    void Awake()
     {
         interactIcon.SetActive(false);
+        flashlight.SetActive(flashlight_on);
     }
 
     // Update is called once per frame
@@ -34,6 +39,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             CheckInteraction();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            SwitchFlashlight();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && currentInteractable != null)
@@ -56,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
         if (movement.x != 0)
         {
             interactCollider.offset = new Vector2(movement.x, -0.5f);
+            flashlight.transform.rotation = Quaternion.Euler(0, 0, 180 + (movement.x*90));
             animator.SetFloat("LastHorizontal", movement.x);
             animator.SetFloat("LastVertical", 0);
 
@@ -64,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (movement.y != 0)
         {
+            flashlight.transform.rotation = Quaternion.Euler(0, 0, 90 - (movement.y*90));
             interactCollider.offset = new Vector2(0, movement.y - 0.5f);
             animator.SetFloat("LastHorizontal", 0);
             animator.SetFloat("LastVertical", movement.y);
@@ -114,5 +126,11 @@ public class PlayerMovement : MonoBehaviour
                 FreezePlayer();
             }
         }
+    }
+
+    public void SwitchFlashlight()
+    {
+        flashlight.SetActive(!flashlight_on);
+        flashlight_on = !flashlight_on;
     }
 }
