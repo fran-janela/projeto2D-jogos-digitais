@@ -1920,6 +1920,8 @@ Transform:
   m_Children:
   - {fileID: 1870538340}
   - {fileID: 1153794593}
+  - {fileID: 1770541416}
+  - {fileID: 1731076175}
   m_Father: {fileID: 64569546}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2223,7 +2225,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3625,9 +3627,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1770541416}
-  - {fileID: 1731076175}
+  m_Children: []
   m_Father: {fileID: 465916630}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5635,6 +5635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interact_direction: {x: 0, y: 1}
+  uiInterface: {fileID: 0}
 --- !u!1 &1392815242
 GameObject:
   m_ObjectHideFlags: 0
@@ -6625,7 +6626,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9009,8 +9010,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1153794593}
-  m_RootOrder: 1
+  m_Father: {fileID: 465916630}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1731076176
 BoxCollider2D:
@@ -9120,8 +9121,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1153794593}
-  m_RootOrder: 0
+  m_Father: {fileID: 465916630}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1770541417
 BoxCollider2D:
@@ -14617,6 +14618,14 @@ PrefabInstance:
     - target: {fileID: 2821509731789066899, guid: 8d9b552d7be9e496a9ee7f968355ea73, type: 3}
       propertyPath: m_Offset.y
       value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416107577673013459, guid: 8d9b552d7be9e496a9ee7f968355ea73, type: 3}
+      propertyPath: m_ShadowIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416107577673013459, guid: 8d9b552d7be9e496a9ee7f968355ea73, type: 3}
+      propertyPath: m_ShadowIntensityEnabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3591435078211534729, guid: 8d9b552d7be9e496a9ee7f968355ea73, type: 3}
       propertyPath: m_RootOrder
