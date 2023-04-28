@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Trigger
+  - BookModel
+  - PostItModel
+  - DialogueBox
   layers:
   - Default
   - TransparentFX
