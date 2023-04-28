@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PushButtonKeyPad : MonoBehaviour
 {
     public static event Action<string> OnButtonPressed = delegate { };
+    public AudioSource audioSource;
 
     private int deviderPosition;
     private string buttonName, buttonValue;
@@ -17,6 +18,12 @@ public class PushButtonKeyPad : MonoBehaviour
         deviderPosition = buttonName.IndexOf("_");
         buttonValue = buttonName.Substring(0, deviderPosition);
 
-        gameObject.GetComponent<Button>().onClick.AddListener(() => OnButtonPressed(buttonValue));
+        gameObject.GetComponent<Button>().onClick.AddListener(PlayButton);
+    }
+
+    private void PlayButton()
+    {
+        audioSource.Play();
+        OnButtonPressed(buttonValue);
     }
 }

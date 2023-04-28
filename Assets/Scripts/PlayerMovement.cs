@@ -4,6 +4,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    #region Singleton
+    public static PlayerMovement instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of PlayerMovement found!");
+            return;
+        }
+        instance = this;
+        interactIcon.SetActive(false);
+        flashlight.SetActive(flashlight_on);
+    }
+    #endregion
+    
     private static GameObject currentInteractable;
 
     public GameObject interactIcon;
@@ -27,11 +44,11 @@ public class PlayerMovement : MonoBehaviour
         currentInteractable = interactable;
     }
 
-    void Awake()
-    {
-        interactIcon.SetActive(false);
-        flashlight.SetActive(flashlight_on);
-    }
+    // void Awake()
+    // {
+    //     interactIcon.SetActive(false);
+    //     flashlight.SetActive(flashlight_on);
+    // }
 
     // Update is called once per frame
     void Update()
@@ -43,7 +60,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            SwitchFlashlight();
+            if (Inventory.instance.Contains("FlashLight"))
+            {
+                SwitchFlashlight();
+            }
+            else {
+                Debug.Log("You don't have a flashlight!");
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && currentInteractable != null)
@@ -101,9 +124,9 @@ public class PlayerMovement : MonoBehaviour
         interactIcon.SetActive(false);
     }
 
-    public void FreezePlayer()
+    public static void FreezePlayer()
     {
-        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        GameObject.Find("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     public static void UnfreezePlayer()
@@ -123,7 +146,6 @@ public class PlayerMovement : MonoBehaviour
             if (hit.transform.GetComponent<Interactable>())
             {
                 hit.collider.GetComponent<Interactable>().Interact();
-                FreezePlayer();
             }
         }
     }

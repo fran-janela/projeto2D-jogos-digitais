@@ -15,6 +15,9 @@ public class DigitalDisplay : MonoBehaviour
 
     public GameObject uiInterface;
 
+    public AudioSource acceptSound;
+    public AudioSource denySound;
+
     void Start()
     {
         codeSequence = "";
@@ -129,6 +132,8 @@ public class DigitalDisplay : MonoBehaviour
         {
             characters[i].sprite = digits[10];
         }
+
+        denySound.Play();
     }
 
     private void CheckCodeSequence()
@@ -136,11 +141,13 @@ public class DigitalDisplay : MonoBehaviour
         if (codeSequence == codeToUnlock)
         {
             Debug.Log("Correct code sequence");
+            acceptSound.Play();
             CloseInterface();
         }
         else
         {
             Debug.Log("Incorrect code sequence");
+            denySound.Play();
             ResetCodeSequence();
         }
     }
