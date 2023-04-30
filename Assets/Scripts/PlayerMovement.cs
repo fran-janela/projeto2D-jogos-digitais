@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
     private static bool flashlight_on = false;
 
     private Vector2 movement;
+    private bool isMoving = false;
+    public AudioSource audioSourceSteps;
 
     public static void SetCurrentInteractable(GameObject interactable)
     {
@@ -88,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (movement.x != 0)
         {
+            isMoving = true;
             interactCollider.offset = new Vector2(movement.x, -0.5f);
             flashlight.transform.rotation = Quaternion.Euler(0, 0, 180 + (movement.x*90));
             animator.SetFloat("LastHorizontal", movement.x);
@@ -98,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (movement.y != 0)
         {
+            isMoving = true;
             flashlight.transform.rotation = Quaternion.Euler(0, 0, 90 - (movement.y*90));
             interactCollider.offset = new Vector2(0, movement.y - 0.5f);
             animator.SetFloat("LastHorizontal", 0);
@@ -106,6 +110,18 @@ public class PlayerMovement : MonoBehaviour
             bodyAnimator.SetFloat("LastHorizontal", 0);
             bodyAnimator.SetFloat("LastVertical", movement.y);
         }
+        else{
+            isMoving = false;
+        }
+
+        if (isMoving){
+            if (!audioSourceSteps.isPlaying) {
+                audioSourceSteps.Play();
+            }
+        } else {
+            audioSourceSteps.Stop();
+        }
+
 
     }
 
