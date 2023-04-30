@@ -6,9 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/OfficeFloor1.unity
+    guid: 6350f7cdd3bb144c486c51ddf7a3140a
+  - enabled: 1
+    path: Assets/Scenes/OfficeFloor2.unity
+    guid: 3688ef3ac7bc14c27a7d28b68942be36
+  - enabled: 1
+    path: Assets/Scenes/Storage.unity
+    guid: f0fa6a28b3d8d420791a40f0bee11aee
+  - enabled: 1
+    path: Assets/Scenes/DataCenter.unity
+    guid: 17999de900ec44672a6b7523c7fd88bb
+  - enabled: 1
+    path: Assets/Scenes/BioLab.unity
+    guid: 629a4d1d21ccf43148eb131992e883cd
+  - enabled: 1
+    path: Assets/Scenes/TestLab.unity
+    guid: cad025d30f9ae48c5984e4fde7971370
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/SampleScene1.unity
-    guid: 027c6da30d07e004589e68b60818314e
   m_configObjects: {}

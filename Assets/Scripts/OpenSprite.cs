@@ -10,6 +10,12 @@ public class OpenSprite : Interactable
     void Start()
     {
         uiInterface = GameObject.FindGameObjectWithTag(spriteNameTag);
+
+        if (uiInterface == null)
+        {
+            Debug.LogError("OpenSprite: uiInterface not found!");
+        }
+
         uiInterface.SetActive(false);
     }
 
