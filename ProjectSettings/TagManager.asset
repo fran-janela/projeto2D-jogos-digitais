@@ -12,6 +12,7 @@ TagManager:
   - InventorySlotIcon
   - KeyPadPanel
   - ElevatorPanel
+  - PlayerFeet
   layers:
   - Default
   - TransparentFX
