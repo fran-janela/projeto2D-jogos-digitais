@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class OpenSprite : Interactable
 {
-    public GameObject uiInterface;
+    private GameObject uiInterface;
+    public string spriteNameTag;
     
     void Start()
     {
+        uiInterface = GameObject.FindGameObjectWithTag(spriteNameTag);
         uiInterface.SetActive(false);
     }
 

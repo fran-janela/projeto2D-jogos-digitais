@@ -13,9 +13,9 @@ public class FlashLightItem : Item
         base.PickUp();
 
         string[] sentences = new string[3];
-        sentences[0] = "YOU TURNED ON THE FLASHLIGHT";
-        sentences[1] = "YOU CAN TURN IT OFF BY PRESSING F";
-        sentences[2] = "YOU CAN ALSO TURN IT ON BY PRESSING F";
+        sentences[0] = "YOU TURNED ON THE FLASHLIGHT!";
+        sentences[1] = "YOU CAN TURN IT OFF BY PRESSING F.";
+        sentences[2] = "YOU CAN ALSO TURN IT ON BY PRESSING F.";
 
         string name = "DAVI REIS";
 

@@ -8,6 +8,9 @@ TagManager:
   - BookModel
   - PostItModel
   - DialogueBox
+  - InventoryUI
+  - InventorySlotIcon
+  - KeyPadPanel
   layers:
   - Default
   - TransparentFX

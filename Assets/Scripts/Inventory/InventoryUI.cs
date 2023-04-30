@@ -8,13 +8,37 @@ public class InventoryUI : MonoBehaviour
     Inventory inventory;
 
     InventorySlot[] slots;
+
+    void Awake()
+    {
+        if (inventoryUI == null)
+        {
+            Debug.Log("InventoryUI not found!");
+
+            GameObject inventoryUIObject = GameObject.FindGameObjectWithTag("InventoryUI");
+
+            if (inventoryUIObject != null)
+            {
+                inventoryUI = inventoryUIObject;
+            }
+            else
+            {
+                Debug.Log("InventoryUI not found!");
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("InventoryUI Start");
+        
+        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += UpdateUI;
 
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        UpdateUI();
 
         inventoryUI.transform.localScale = Vector3.zero;
     }
@@ -25,6 +49,9 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             Debug.Log("Toggling inventory");
+    
+            UpdateUI();
+
             inventoryUI.SetActive(!inventoryUI.activeSelf);
 
             if (inventoryUI.activeSelf)
@@ -46,7 +73,7 @@ public class InventoryUI : MonoBehaviour
             }
             else
             {
-                Debug.Log("Clearing slot " + i);
+                // Debug.Log("Clearing slot " + i);
                 slots[i].ClearSlot();
             }
         }
