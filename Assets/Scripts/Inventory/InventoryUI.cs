@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -46,8 +47,20 @@ public class InventoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            inventory.items.Clear();
+        }
+
         if (Input.GetKeyDown(KeyCode.I))
         {
+            if (SceneManager.GetActiveScene().name == "MainMenu")
+            {
+                Debug.Log("InventoryUI: MainMenu");
+                return;
+            }
+
             Debug.Log("Toggling inventory");
     
             UpdateUI();

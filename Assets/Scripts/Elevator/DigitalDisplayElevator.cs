@@ -40,8 +40,8 @@ public class DigitalDisplayElevator : MonoBehaviour
         {"S3", "Card3"},
         {"S2", "Card3"},
         {"S1", "Card3"},
-        {"T", "Card3"},
-        {"1", "Card3"},
+        {"T", "CardOfficeAccess"},
+        {"1", "CardOfficeAccess"},
         {"2", "Card3"},
     };
 
@@ -81,20 +81,20 @@ public class DigitalDisplayElevator : MonoBehaviour
     private string currentFloor;
     private string targetFloor;
 
-    // #region Singleton
-    // public static DigitalDisplayElevator instance;
+    #region Singleton
+    public static DigitalDisplayElevator instance;
 
-    // void Awake()
-    // {
-    //     if (instance != null)
-    //     {
-    //         Debug.LogWarning("More than one instance of DigitalDisplayElevator found!");
-    //         return;
-    //     }
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of DigitalDisplayElevator found!");
+            return;
+        }
 
-    //     instance = this;
-    // }
-    // #endregion
+        instance = this;
+    }
+    #endregion
 
     void Start()
     {
@@ -106,6 +106,13 @@ public class DigitalDisplayElevator : MonoBehaviour
 
         currentFloorText.text = currentFloor;
         targetFloorText.text = targetFloor;
+    }
+
+    void Update()
+    {
+        // update current floor
+        currentFloor = GetCurrentFloorBySceneName();
+        currentFloorText.text = currentFloor;
     }
 
     private void UpdateTargetFloor(string buttonValue)
@@ -129,7 +136,7 @@ public class DigitalDisplayElevator : MonoBehaviour
                 else
                 {
                     Debug.Log("You don't have the key to go to the target floor");
-                    ElevatorMessage("NO CARD PERMISSION.");
+                    ElevatorMessage("NO CARD PERMISSION");
                 }
             }
         }
