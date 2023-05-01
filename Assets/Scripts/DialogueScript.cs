@@ -25,7 +25,8 @@ public class DialogueScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && dialogueBox.activeSelf)
+
+        if (((Input.GetMouseButtonDown(0) ||  ( Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))) && dialogueBox.activeSelf))
         {
             if (dialogueText.text == sentences[index])
             {
