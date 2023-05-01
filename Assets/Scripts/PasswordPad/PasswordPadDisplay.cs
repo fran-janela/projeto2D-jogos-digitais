@@ -36,7 +36,6 @@ public class PasswordPadDisplay : MonoBehaviour
     public void SubmitPassword()
     {
         string inputPassword = passwordInputField.text;
-        Debug.Log("inputPassword: " + inputPassword);
 
         if (inputPassword == correctPassword)
         {
