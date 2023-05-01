@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactIcon: {fileID: 3591435078614192785}
-  moveSpeed: 4
+  moveSpeed: 10
   rb: {fileID: 3591435078211534743}
   animator: {fileID: 3591435078211534728}
   bodyAnimator: {fileID: 3591435077743162905}

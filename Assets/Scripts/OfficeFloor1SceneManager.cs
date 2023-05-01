@@ -32,6 +32,9 @@ public class OfficeFloor1SceneManager : MonoBehaviour
         {
             Debug.LogError("OpenSprite: GlobalFlagSystem not found!");
         }
+        if (GFS.GetComponent<GlobalFlagSystem>().gameStarted){
+            player.GetComponent<Rigidbody2D>().position = new Vector2(11f, 7.2f);
+        }
 
         GFS.GetComponent<GlobalFlagSystem>().gameStarted = true;
         if (GFS.GetComponent<GlobalFlagSystem>().elevatorUnlocked){

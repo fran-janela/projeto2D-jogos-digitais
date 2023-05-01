@@ -20,6 +20,7 @@ TagManager:
   - KeyPadLockerT3
   - PasswordPad
   - LockBagStorage
+  - KeyPadLocker12
   layers:
   - Default
   - TransparentFX
