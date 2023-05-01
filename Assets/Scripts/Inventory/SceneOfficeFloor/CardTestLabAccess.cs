@@ -11,7 +11,7 @@ public class CardTestLabAccess : Item
     {
         base.PickUp();
 
-        string[] sentences = new string[3];
+        string[] sentences = new string[2];
         sentences[0] = "Olha! Uma novo cartão de acesso!";
         sentences[1] = "Este me permite acessar o laboratório de testes químicos no S2.";
 

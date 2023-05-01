@@ -16,16 +16,20 @@ public class LockerDisplay : MonoBehaviour
 
     public GameObject lockerInterface;
 
+    public AudioSource acceptSound;
+    public AudioSource denySound;
+
+    public GameObject sceneManager;
+
+
+
 
     void Start()
     {
-        // subscribe to event OnButtonPressed
-        PushButtonLocker.OnButtonPressed += CheckCode;
-
-        tryButton.onClick.AddListener(TryCode);
+        tryButton.onClick.AddListener(CheckCode);
     }
 
-    private void CheckCode(string character)
+    private void CheckCode()
     {
         // check if all 4 characters are set
         if (pushButtonLockers[0].GetCurrentCharacter() != "" && pushButtonLockers[1].GetCurrentCharacter() != "" && pushButtonLockers[2].GetCurrentCharacter() != "" && pushButtonLockers[3].GetCurrentCharacter() != "")

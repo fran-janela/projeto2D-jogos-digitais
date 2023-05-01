@@ -23,6 +23,7 @@ public class OfficeFloor1SceneManager : MonoBehaviour
     private GameObject GFS;
 
     public GameObject TriggerLockerKeyPad, TriggerLockerOpened;
+    public GameObject TriggerLockStorageBag, TriggerStorageBagOpened;
 
     public void Start(){
         GFS = GameObject.FindGameObjectWithTag("GlobalFlagSystem");
@@ -96,6 +97,12 @@ public class OfficeFloor1SceneManager : MonoBehaviour
             {
                 Debug.Log("DialogueBox not found!");
             }
+        }
+    }
+    public void LockCorrectSequence(string lock_name){
+        if (lock_name == "StorageBag"){
+            TriggerLockStorageBag.SetActive(false);
+            TriggerStorageBagOpened.SetActive(true);
         }
     }
 

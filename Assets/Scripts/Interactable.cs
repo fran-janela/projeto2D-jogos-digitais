@@ -7,7 +7,7 @@ public abstract class Interactable : MonoBehaviour
     public Vector2 interact_direction = new Vector2(0, 1);
     public void Reset()
     {
-        GetComponent<PolygonCollider2D>().isTrigger = true;
+        GetComponent<Collider2D>().isTrigger = true;
     }
 
 
