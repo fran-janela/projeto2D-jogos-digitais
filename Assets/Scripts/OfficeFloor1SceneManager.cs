@@ -19,10 +19,21 @@ public class OfficeFloor1SceneManager : MonoBehaviour
     private bool FadeIn = false;
     private bool FadeOut = false;
     public GameObject ElevatorTrigger;
+    public GameObject UnlockElevatorTrigger;
+    private GameObject GFS;
 
     public void Start(){
-        if (Inventory.instance.Contains("Elevator Key")){
+        GFS = GameObject.FindGameObjectWithTag("GlobalFlagSystem");
+
+        if (GFS == null)
+        {
+            Debug.LogError("OpenSprite: GlobalFlagSystem not found!");
+        }
+
+        GFS.GetComponent<GlobalFlagSystem>().gameStarted = true;
+        if (GFS.GetComponent<GlobalFlagSystem>().elevatorUnlocked){
             ElevatorTrigger.SetActive(true);
+            UnlockElevatorTrigger.SetActive(false);
         } else {
             ElevatorTrigger.SetActive(false);
         }

@@ -19,11 +19,17 @@ public class PostItWindowPanel : MonoBehaviour
     private TextMeshProUGUI pageOne;
     [SerializeField]
     private Button closeButton;
+    [SerializeField]
+    private Image PostitImage;
 
 
     public void SetPostIt(string pageOneText)
     {
         pageOne.text = pageOneText;
+    }
+
+    public void SetSprite(Sprite postit_sprite){
+        PostitImage.sprite = postit_sprite;
     }
 
     public void Close()

@@ -7,6 +7,7 @@ using TMPro;
 [CreateAssetMenu(fileName = "New PostIt Item", menuName = "Inventory/PostIt")]
 public class PostItItem : Item
 {
+    public string PanelTag = "PostItModel";
     public string postItName = "New PostIt";
     public string pageOne = "Page One";
 
@@ -23,9 +24,10 @@ public class PostItItem : Item
 
         Debug.Log("[PostIt Item Type] " + postItName);
 
-        GameObject PostItWindowPanel = GameObject.FindGameObjectWithTag("PostItModel");
+        GameObject PostItWindowPanel = GameObject.FindGameObjectWithTag(PanelTag);
         if (PostItWindowPanel != null)
         {
+            PostItWindowPanel.GetComponent<PostItWindowPanel>().SetSprite(base.icon);
             PostItWindowPanel.GetComponent<PostItWindowPanel>().SetPostIt(pageOne);
             PostItWindowPanel.GetComponent<PostItWindowPanel>().Open();
         }

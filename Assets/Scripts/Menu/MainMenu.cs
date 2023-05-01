@@ -15,6 +15,8 @@ public class MainMenu : MonoBehaviour
     public AudioSource musicSound;
     public AudioSource buttonSound;
 
+    private GameObject elevatorInterface;
+
     public void PlayButtonSound() {
         musicSound.Play();
     }
@@ -25,10 +27,19 @@ public class MainMenu : MonoBehaviour
 
     void Start() {
         PlayButtonSound();
+        elevatorInterface = GameObject.FindGameObjectWithTag("ElevatorPanel");
+
+        if (elevatorInterface == null)
+        {
+            Debug.LogError("OpenSprite: uiInterface not found!");
+        }
+
+        elevatorInterface.SetActive(false);
     }
 
     public void StartGame() {
         PlayClickSound();
+        elevatorInterface.SetActive(true);
         SceneManager.LoadScene(firstLevel);
     }
 
