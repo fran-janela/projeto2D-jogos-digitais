@@ -22,6 +22,8 @@ public class OfficeFloor1SceneManager : MonoBehaviour
     public GameObject UnlockElevatorTrigger;
     private GameObject GFS;
 
+    public GameObject TriggerLockerKeyPad, TriggerLockerOpened;
+
     public void Start(){
         GFS = GameObject.FindGameObjectWithTag("GlobalFlagSystem");
 
@@ -76,6 +78,9 @@ public class OfficeFloor1SceneManager : MonoBehaviour
             MaintenenceDoorClosed.SetActive(false);
             DoorTrigger.enabled = false;
             MaintenenceDoorOpen.SetActive(true);
+        } else if (door == "LockerT3"){
+            TriggerLockerOpened.SetActive(true);
+            TriggerLockerKeyPad.SetActive(false);
         }
     }
 

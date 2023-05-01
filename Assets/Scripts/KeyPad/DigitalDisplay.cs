@@ -145,7 +145,11 @@ public class DigitalDisplay : MonoBehaviour
             Debug.Log("Correct code sequence");
             acceptSound.Play();
             CloseInterface();
-            sceneManager.GetComponent<OfficeFloor1SceneManager>().KeypadCorrectSequence("Maintenence");
+            if(transform.parent.tag == "KeyPadPanelMaintenence"){
+                sceneManager.GetComponent<OfficeFloor1SceneManager>().KeypadCorrectSequence("Maintenence");
+            } else if (transform.parent.tag == "KeyPadLockerT3"){
+                sceneManager.GetComponent<OfficeFloor1SceneManager>().KeypadCorrectSequence("LockerT3");
+            }
         }
         else
         {
