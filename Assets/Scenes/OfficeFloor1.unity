@@ -38283,7 +38283,7 @@ MonoBehaviour:
   lockerInterface: {fileID: 222201952}
   acceptSound: {fileID: 416389518}
   denySound: {fileID: 776075367}
-  sceneManager: {fileID: 733217066}
+  SceneManager: {fileID: 733217066}
 --- !u!1001 &1976253330
 PrefabInstance:
   m_ObjectHideFlags: 0
