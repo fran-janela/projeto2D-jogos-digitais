@@ -18,6 +18,15 @@ public class OfficeFloor1SceneManager : MonoBehaviour
     private bool changeRoomActive = false;
     private bool FadeIn = false;
     private bool FadeOut = false;
+    public GameObject ElevatorTrigger;
+
+    public void Start(){
+        if (Inventory.instance.Contains("Elevator Key")){
+            ElevatorTrigger.SetActive(true);
+        } else {
+            ElevatorTrigger.SetActive(false);
+        }
+    }
 
     public void Update(){
         if (changeRoomActive) {
