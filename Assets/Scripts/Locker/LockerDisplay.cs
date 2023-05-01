@@ -34,7 +34,7 @@ public class LockerDisplay : MonoBehaviour
             if (pushButtonLockers[0].GetCurrentCharacter() == correctCode[0] && pushButtonLockers[1].GetCurrentCharacter() == correctCode[1] && pushButtonLockers[2].GetCurrentCharacter() == correctCode[2] && pushButtonLockers[3].GetCurrentCharacter() == correctCode[3])
             {
                 lockerDoor.enabled = false;
-                lockerInterface.SetActive(false);
+                CloseInterface();
             }
         }
     }
@@ -48,9 +48,8 @@ public class LockerDisplay : MonoBehaviour
             if (pushButtonLockers[0].GetCurrentCharacter() == correctCode[0] && pushButtonLockers[1].GetCurrentCharacter() == correctCode[1] && pushButtonLockers[2].GetCurrentCharacter() == correctCode[2] && pushButtonLockers[3].GetCurrentCharacter() == correctCode[3])
             {
                 lockerDoor.enabled = false;
-                lockerInterface.SetActive(false);
-
                 Debug.Log("Correct code");
+                CloseInterface();
             }
             else
             {
@@ -62,5 +61,13 @@ public class LockerDisplay : MonoBehaviour
     private void OnDestroy()
     {
         PushButtonLocker.OnButtonPressed -= CheckCode;
+    }
+
+    public void CloseInterface()
+    {
+        lockerInterface.SetActive(false);
+
+        PlayerMovement.SetCurrentInteractable(null);
+        PlayerMovement.UnfreezePlayer();
     }
 }
