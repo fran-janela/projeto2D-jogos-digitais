@@ -81,6 +81,21 @@ public class OfficeFloor1SceneManager : MonoBehaviour
         } else if (door == "LockerT3"){
             TriggerLockerOpened.SetActive(true);
             TriggerLockerKeyPad.SetActive(false);
+            string[] sentences = new string[1];
+            sentences[0] = "Opa, a senha estava certa! O que será que tem dentro?";
+
+            string name = "EU";
+
+            GameObject dialogueBox = GameObject.FindGameObjectWithTag("DialogueBox");
+            if (dialogueBox != null)
+            {
+                Debug.Log("DialogueBox found!");
+                dialogueBox.GetComponent<DialogueScript>().SetNewDialogue(sentences, name);
+            }
+            else
+            {
+                Debug.Log("DialogueBox not found!");
+            }
         }
     }
 

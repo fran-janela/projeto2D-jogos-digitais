@@ -47,8 +47,6 @@ public class MainMenu : MonoBehaviour
         {
             Debug.LogWarning("OpenSprite: uiInterface not found!");
         } else {
-            elevatorInterface = GameObject.FindGameObjectWithTag("ElevatorPanel");
-            
             elevatorInterface.SetActive(true);
         }
 
