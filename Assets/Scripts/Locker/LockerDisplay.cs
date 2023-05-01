@@ -16,16 +16,20 @@ public class LockerDisplay : MonoBehaviour
 
     public GameObject lockerInterface;
 
+    public AudioSource acceptSound;
+    public AudioSource denySound;
+
+    public GameObject sceneManager;
+
+
+
 
     void Start()
     {
-        // subscribe to event OnButtonPressed
-        PushButtonLocker.OnButtonPressed += CheckCode;
-
-        tryButton.onClick.AddListener(TryCode);
+        tryButton.onClick.AddListener(CheckCode);
     }
 
-    private void CheckCode(string character)
+    private void CheckCode()
     {
         // check if all 4 characters are set
         if (pushButtonLockers[0].GetCurrentCharacter() != "" && pushButtonLockers[1].GetCurrentCharacter() != "" && pushButtonLockers[2].GetCurrentCharacter() != "" && pushButtonLockers[3].GetCurrentCharacter() != "")
@@ -34,7 +38,17 @@ public class LockerDisplay : MonoBehaviour
             if (pushButtonLockers[0].GetCurrentCharacter() == correctCode[0] && pushButtonLockers[1].GetCurrentCharacter() == correctCode[1] && pushButtonLockers[2].GetCurrentCharacter() == correctCode[2] && pushButtonLockers[3].GetCurrentCharacter() == correctCode[3])
             {
                 lockerDoor.enabled = false;
+                acceptSound.Play();
                 lockerInterface.SetActive(false);
+                PlayerMovement.SetCurrentInteractable(null);
+                PlayerMovement.UnfreezePlayer();
+                if(transform.parent.tag == "LockBagStorage"){
+                    sceneManager.GetComponent<OfficeFloor1SceneManager>().LockCorrectSequence("StorageBag");
+                }
+
+            } else {
+                Debug.Log("Wrong code");
+                denySound.Play();
             }
         }
     }
@@ -59,8 +73,4 @@ public class LockerDisplay : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        PushButtonLocker.OnButtonPressed -= CheckCode;
-    }
 }

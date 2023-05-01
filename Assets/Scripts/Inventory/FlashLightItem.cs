@@ -12,10 +12,9 @@ public class FlashLightItem : Item
     {
         base.PickUp();
 
-        string[] sentences = new string[3];
-        sentences[0] = "YOU TURNED ON THE FLASHLIGHT!";
-        sentences[1] = "YOU CAN TURN IT OFF BY PRESSING F.";
-        sentences[2] = "YOU CAN ALSO TURN IT ON BY PRESSING F.";
+        string[] sentences = new string[2];
+        sentences[0] = "Uma Lanterna! Posso utilizá-la para iluminar lugares escuros";
+        sentences[1] = "Posso ligá-la precionando F ou clicando no inventário.";
 
         string name = "DAVI REIS";
 

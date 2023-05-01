@@ -18,6 +18,7 @@ TagManager:
   - GlobalFlagSystem
   - PostItModelOffFlorr2Niver
   - KeyPadLockerT3
+  - LockBagStorage
   layers:
   - Default
   - TransparentFX
