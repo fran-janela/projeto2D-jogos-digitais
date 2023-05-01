@@ -155,9 +155,16 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 direction = new Vector2(animator.GetFloat("LastHorizontal"), animator.GetFloat("LastVertical"));
         // show debug raycast beam.
-        Debug.DrawRay(transform.position, direction, Color.red, 0.5f);
+        Debug.Log(transform.position);
+        Vector3 pActPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 0.8f, LayerMask.GetMask("Trigger Raycast"));
+        if (animator.GetFloat("LastVertical") < 0){
+            Debug.Log("lockingDown");
+            pActPos = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
+        }
+        Debug.DrawRay(pActPos, direction, Color.red, 0.8f);
+
+        RaycastHit2D hit = Physics2D.Raycast(pActPos, direction, 0.8f, LayerMask.GetMask("Trigger Raycast"));
         if (hit)
         {
             Debug.Log("Interacting with " + hit.collider.name);

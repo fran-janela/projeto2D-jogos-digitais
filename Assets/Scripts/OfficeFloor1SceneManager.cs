@@ -8,6 +8,9 @@ public class OfficeFloor1SceneManager : MonoBehaviour
     public GameObject playerBody;
     public GameObject playerFeet;
     public GameObject camera;
+
+    public GameObject MaintenenceDoorOpen, MaintenenceDoorClosed;
+    public Collider2D DoorTrigger;
     public Animator changePlayerRoomAnim;
     private Vector2 warpPosition;
     private Vector2 cameraMinPos;
@@ -46,6 +49,14 @@ public class OfficeFloor1SceneManager : MonoBehaviour
         cameraMaxPos = CameraMaxPos;
         changeRoomActive = true;
         FadeIn = true;
+    }
+
+    public void KeypadCorrectSequence(string door){
+        if (door == "Maintenence"){
+            MaintenenceDoorClosed.SetActive(false);
+            DoorTrigger.enabled = false;
+            MaintenenceDoorOpen.SetActive(true);
+        }
     }
 
 }

@@ -81,23 +81,24 @@ public class DigitalDisplayElevator : MonoBehaviour
     private string currentFloor;
     private string targetFloor;
 
-    #region Singleton
-    public static DigitalDisplayElevator instance;
+    // #region Singleton
+    // public static DigitalDisplayElevator instance;
 
-    void Awake()
-    {
-        if (instance != null)
-        {
-            Debug.LogWarning("More than one instance of DigitalDisplayElevator found!");
-            return;
-        }
+    // void Awake()
+    // {
+    //     if (instance != null)
+    //     {
+    //         Debug.LogWarning("More than one instance of DigitalDisplayElevator found!");
+    //         return;
+    //     }
 
-        instance = this;
-    }
-    #endregion
+    //     instance = this;
+    // }
+    // #endregion
 
     void Start()
     {
+        Debug.Log("DigitalDisplayElevator Start");
         PushButtonElevator.OnButtonPressed += UpdateTargetFloor;
 
         currentFloor = GetCurrentFloorBySceneName();

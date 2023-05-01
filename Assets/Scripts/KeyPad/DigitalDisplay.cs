@@ -18,6 +18,8 @@ public class DigitalDisplay : MonoBehaviour
     public AudioSource acceptSound;
     public AudioSource denySound;
 
+    public GameObject sceneManager;
+
     void Start()
     {
         codeSequence = "";
@@ -143,6 +145,7 @@ public class DigitalDisplay : MonoBehaviour
             Debug.Log("Correct code sequence");
             acceptSound.Play();
             CloseInterface();
+            sceneManager.GetComponent<OfficeFloor1SceneManager>().KeypadCorrectSequence("Maintenence");
         }
         else
         {

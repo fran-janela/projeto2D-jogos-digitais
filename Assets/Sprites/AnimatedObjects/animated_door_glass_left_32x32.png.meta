@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 781be55689b564a83a7075c2fb41fc5e
+guid: 3b8658aab6510488eb9edc33b7239c75
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animated_door_glass_right_32x32_0
+      name: animated_door_glass_left_32x32_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd142041e852548a888eda70122f6ea0
-      internalID: 978817904
+      spriteID: 7d60802d0450a43289e21f8437b80dee
+      internalID: 326764600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_32x32_1
+      name: animated_door_glass_left_32x32_1
       rect:
         serializedVersion: 2
         x: 32
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 139d8a2d41e144bf3ae82816cc9d68d0
-      internalID: 1641268146
+      spriteID: b9e433f0142264feea6984daf67b29b2
+      internalID: -684206745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_32x32_2
+      name: animated_door_glass_left_32x32_2
       rect:
         serializedVersion: 2
         x: 64
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0cc949ae51ea4342a2e226a78c84fbd
-      internalID: 1055278610
+      spriteID: c25f0a7bfb22a41f4a9aa960f5b8f173
+      internalID: -1693641352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_32x32_3
+      name: animated_door_glass_left_32x32_3
       rect:
         serializedVersion: 2
         x: 96
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0735d0ca71e0c4ca7895c84d01405f79
-      internalID: 1825004892
+      spriteID: 46cb3218121c843929caeb9798839892
+      internalID: -1837334450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_32x32_4
+      name: animated_door_glass_left_32x32_4
       rect:
         serializedVersion: 2
         x: 128
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49dfba5571c81417b89e35beeb8d87ee
-      internalID: -200266510
+      spriteID: c6badd1d76c034ce0ba8dcd179f6fef4
+      internalID: -2137897292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_32x32_5
+      name: animated_door_glass_left_32x32_5
       rect:
         serializedVersion: 2
         x: 160
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83c13acafa4614a83a0a123684fa0eaf
-      internalID: 2143855424
+      spriteID: cdb5fba31e4d648ed81bd93875d2a65a
+      internalID: 1766439491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_32x32_6
+      name: animated_door_glass_left_32x32_6
       rect:
         serializedVersion: 2
         x: 192
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be9bcfa43118e41f5a9ee1a3f820b18f
-      internalID: -927183654
+      spriteID: 863020c46b4884213a129b1ad9403316
+      internalID: 322853788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animated_door_glass_right_32x32_7
+      name: animated_door_glass_left_32x32_7
       rect:
         serializedVersion: 2
         x: 224
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12950e9d62a5a47c9aa52e8914f815fe
-      internalID: 339808559
+      spriteID: 68a957c70cfe84da1a316cecce5ee1e6
+      internalID: -10568121
       vertices: []
       indices: 
       edges: []
@@ -295,14 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      animated_door_glass_right_32x32_0: 978817904
-      animated_door_glass_right_32x32_1: 1641268146
-      animated_door_glass_right_32x32_2: 1055278610
-      animated_door_glass_right_32x32_3: 1825004892
-      animated_door_glass_right_32x32_4: -200266510
-      animated_door_glass_right_32x32_5: 2143855424
-      animated_door_glass_right_32x32_6: -927183654
-      animated_door_glass_right_32x32_7: 339808559
+      animated_door_glass_left_32x32_0: 326764600
+      animated_door_glass_left_32x32_1: -684206745
+      animated_door_glass_left_32x32_2: -1693641352
+      animated_door_glass_left_32x32_3: -1837334450
+      animated_door_glass_left_32x32_4: -2137897292
+      animated_door_glass_left_32x32_5: 1766439491
+      animated_door_glass_left_32x32_6: 322853788
+      animated_door_glass_left_32x32_7: -10568121
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -13,6 +13,7 @@ TagManager:
   - KeyPadPanel
   - ElevatorPanel
   - PlayerFeet
+  - KeyPadPanelMaintenence
   layers:
   - Default
   - TransparentFX
