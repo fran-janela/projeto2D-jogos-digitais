@@ -52,7 +52,9 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         buttonAudioSource.Play();
-        
+
+        ResetComponents();
+
         Debug.Log("Loading Menu...");
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenuReset");
@@ -64,5 +66,10 @@ public class PauseMenu : MonoBehaviour
 
         Debug.Log("Quitting Game...");
         Application.Quit();
+    }
+
+    private void ResetComponents()
+    {
+        DigitalDisplayElevator.instance.OpenElevatorUI();        
     }
 }

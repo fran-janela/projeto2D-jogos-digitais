@@ -51,6 +51,7 @@ public class InventoryUI : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "MainMenuReset" )
         {
             inventory.items.Clear();
+            inventoryUI.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.I))
