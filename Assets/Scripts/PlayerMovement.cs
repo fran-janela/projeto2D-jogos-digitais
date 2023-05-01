@@ -154,8 +154,10 @@ public class PlayerMovement : MonoBehaviour
     private void CheckInteraction()
     {
         Vector2 direction = new Vector2(animator.GetFloat("LastHorizontal"), animator.GetFloat("LastVertical"));
+        // show debug raycast beam.
+        Debug.DrawRay(transform.position, direction, Color.red, 0.5f);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 0.5f, LayerMask.GetMask("Trigger Raycast"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 0.8f, LayerMask.GetMask("Trigger Raycast"));
         if (hit)
         {
             Debug.Log("Interacting with " + hit.collider.name);

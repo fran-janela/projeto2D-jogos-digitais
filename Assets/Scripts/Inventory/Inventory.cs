@@ -19,6 +19,30 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
+    public GameObject inventoryUI;
+
+    void Start()
+    {
+        Debug.Log("Inventory Start");
+        if (inventoryUI == null)
+        {
+            Debug.Log("InventoryUI not found!");
+
+            GameObject inventoryUIObject = GameObject.FindGameObjectWithTag("InventoryUI");
+
+            if (inventoryUIObject != null)
+            {
+                inventoryUI = inventoryUIObject;
+            }
+            else
+            {
+                Debug.Log("InventoryUI not found!");
+            }
+
+            
+        }
+    }
+
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
     
