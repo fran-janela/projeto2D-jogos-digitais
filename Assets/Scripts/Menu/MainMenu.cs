@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class MainMenu : MonoBehaviour
 
     public AudioSource musicSound;
     public AudioSource buttonSound;
+
+    public AudioMixer audioMixer;
 
     private GameObject elevatorInterface;
 
@@ -31,15 +34,24 @@ public class MainMenu : MonoBehaviour
 
         if (elevatorInterface == null)
         {
-            Debug.LogError("OpenSprite: uiInterface not found!");
+            Debug.LogWarning("OpenSprite: uiInterface not found!");
+        } else {
+            elevatorInterface.SetActive(false);
         }
-
-        elevatorInterface.SetActive(false);
     }
 
     public void StartGame() {
         PlayClickSound();
-        elevatorInterface.SetActive(true);
+        
+        if (elevatorInterface == null)
+        {
+            Debug.LogWarning("OpenSprite: uiInterface not found!");
+        } else {
+            elevatorInterface = GameObject.FindGameObjectWithTag("ElevatorPanel");
+            
+            elevatorInterface.SetActive(true);
+        }
+
         SceneManager.LoadScene(firstLevel);
     }
 
@@ -84,5 +96,16 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void SetVolume(float volume) {
+        audioMixer.SetFloat("volume", volume);
+    }
+
+    public void SetQuality(int qualityIndex) {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void SetFullscreen(bool isFullscreen) {
+        Screen.fullScreen = isFullscreen;
+    }
 
 }

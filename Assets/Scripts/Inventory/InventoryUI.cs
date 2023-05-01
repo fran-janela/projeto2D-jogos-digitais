@@ -48,14 +48,14 @@ public class InventoryUI : MonoBehaviour
     void Update()
     {
 
-        if (SceneManager.GetActiveScene().name == "MainMenu")
+        if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "MainMenuReset" )
         {
             inventory.items.Clear();
         }
 
         if (Input.GetKeyDown(KeyCode.I))
         {
-            if (SceneManager.GetActiveScene().name == "MainMenu")
+            if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "MainMenuReset")
             {
                 Debug.Log("InventoryUI: MainMenu");
                 return;
