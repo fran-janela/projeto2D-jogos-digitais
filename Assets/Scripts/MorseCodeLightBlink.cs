@@ -9,6 +9,8 @@ public class MorseCodeLightBlink : MonoBehaviour
 
     private int index = 0;
     private float timer = 0f;
+
+    private bool in_pause_time = false;
     
     // Start is called before the first frame update
     void Start()
@@ -21,7 +23,7 @@ public class MorseCodeLightBlink : MonoBehaviour
     {
         timer += Time.deltaTime*1.5f;
         Debug.Log(timer);
-        if (timer > morse_code[index]){
+        if (timer > morse_code[index] && !in_pause_time){
             if (light_source.intensity == 0f){
                 light_source.intensity = 4f;
             } else {
@@ -31,8 +33,15 @@ public class MorseCodeLightBlink : MonoBehaviour
             if (light_source.intensity > 0f){
                 index++;
                 if (index >= morse_code.Count){
+                    in_pause_time = true;
                     index = 0;
                 }
+            }
+        }
+        if (in_pause_time){
+            if (timer > 4f){
+                in_pause_time = false;
+                timer = 0f;
             }
         }
     }

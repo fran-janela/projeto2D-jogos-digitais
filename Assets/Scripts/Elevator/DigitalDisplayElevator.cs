@@ -39,7 +39,7 @@ public class DigitalDisplayElevator : MonoBehaviour
     {
         {"S3", "Card3"},
         {"S2", "CardTestLabAccess"},
-        {"S1", "Card3"},
+        {"S1", "CardTIAccess"},
         {"T", "CardOfficeAccess"},
         {"1", "CardOfficeAccess"},
         {"2", "Card3"},

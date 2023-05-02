@@ -40,6 +40,7 @@ public class LockerDisplay : MonoBehaviour
                 lockerDoor.enabled = false;
                 acceptSound.Play();
                 if (transform.parent.tag == "LockBagStorage") SceneManager.GetComponent<OfficeFloor1SceneManager>().LockCorrectSequence("StorageBag");
+                if (transform.parent.tag == "LockTesteLab") SceneManager.GetComponent<TesteLabSceneManager>().LockCorrectSequence("YellowDrawer");
 
                 CloseInterface();
             } else {
