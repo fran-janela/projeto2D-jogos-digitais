@@ -9711,7 +9711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStarted: 0
-  elevatorUnlocked: 1
+  elevatorUnlocked: 0
 --- !u!4 &473915208
 Transform:
   m_ObjectHideFlags: 0

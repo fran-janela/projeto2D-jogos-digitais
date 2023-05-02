@@ -20,7 +20,7 @@ public class PasswordPadDisplay : MonoBehaviour
 
     public void Start()
     {
-        passwordInteraface.SetActive(false);
+        // passwordInteraface.SetActive(false);
         incorrectMessage.text = "";
     }
 
