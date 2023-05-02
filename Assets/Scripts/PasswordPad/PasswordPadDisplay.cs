@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PasswordPadDisplay : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class PasswordPadDisplay : MonoBehaviour
         if (inputPassword == correctPassword)
         {
             CloseInterface();
+
+            SceneManager.LoadScene("WinFinalScreen");
         }
         else
         {
