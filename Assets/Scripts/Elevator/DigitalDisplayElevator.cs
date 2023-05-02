@@ -37,7 +37,7 @@ public class DigitalDisplayElevator : MonoBehaviour
 
     private Dictionary<string, string> buttonToItemName = new Dictionary<string, string>()
     {
-        {"S3", "Card3"},
+        {"S3", "CardBossAccess"},
         {"S2", "CardTestLabAccess"},
         {"S1", "CardTIAccess"},
         {"T", "CardOfficeAccess"},
