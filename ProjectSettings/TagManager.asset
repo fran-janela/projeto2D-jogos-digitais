@@ -22,6 +22,8 @@ TagManager:
   - LockBagStorage
   - KeyPadLocker12
   - LockTesteLab
+  - KeyPadSecurityRoom
+  - KeyPadLocker13
   layers:
   - Default
   - TransparentFX

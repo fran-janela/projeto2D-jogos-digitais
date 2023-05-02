@@ -151,6 +151,10 @@ public class DigitalDisplay : MonoBehaviour
                 sceneManager.GetComponent<OfficeFloor1SceneManager>().KeypadCorrectSequence("LockerT3");
             } else if (transform.parent.tag == "KeyPadLocker12"){
                 sceneManager.GetComponent<OfficeFloor2SceneManager>().KeypadCorrectSequence("Locker12");
+            } else if (transform.parent.tag == "KeyPadLocker13"){
+                sceneManager.GetComponent<OfficeFloor2SceneManager>().KeypadCorrectSequence("Locker13");
+            } else if (transform.parent.tag == "KeyPadSecurityRoom"){
+                sceneManager.GetComponent<DataCenterSceneManager>().KeypadCorrectSequence("SecRoom");
             }
         }
         else

@@ -16,7 +16,7 @@ public class FlashLightItem : Item
         sentences[0] = "Uma Lanterna! Posso utilizá-la para iluminar lugares escuros";
         sentences[1] = "Posso ligá-la precionando F ou clicando no inventário.";
 
-        string name = "DAVI REIS";
+        string name = "EU";
 
         GameObject dialogueBox = GameObject.FindGameObjectWithTag("DialogueBox");
         if (dialogueBox != null)

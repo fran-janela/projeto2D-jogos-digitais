@@ -34,6 +34,8 @@ public class OfficeFloor1SceneManager : MonoBehaviour
         }
         if (GFS.GetComponent<GlobalFlagSystem>().gameStarted){
             player.GetComponent<Rigidbody2D>().position = new Vector2(11f, 7.2f);
+            camera.GetComponent<cameraScript>().minPosition = new Vector2(-3.2f, -3.4f);
+            camera.GetComponent<cameraScript>().maxPosition = new Vector2(3.6f, 4.15f);
         }
 
         GFS.GetComponent<GlobalFlagSystem>().gameStarted = true;
