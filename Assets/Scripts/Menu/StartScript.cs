@@ -10,12 +10,14 @@ public class StartScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string[] sentences = new string[3];
-        sentences[0] = "Olá, eu sou o Pablo, o gerente da fábrica de reatores nucleares.";
-        sentences[1] = "Estamos com um problema no reator e precisamos de sua ajuda para resolver.";
-        sentences[2] = "Você pode nos ajudar?";
+        string[] sentences = new string[5];
+        sentences[0] = "Uau, eu não acredito que isso aconteceu! Como uma simples falha em um experimento pode causar tanto caos? Eu preciso fazer algo para ajudar!";
+        sentences[1] = " As portas do laboratório foram trancadas automaticamente para evitar a disseminação da contaminação. Vou ter que chegar ao reator principal de qualquer jeito.";
+        sentences[2] = "Terei de descer até o reator principal, mas para isso, vou ter que passar por todos os andares do laboratório. E para piorar, o sistema de segurança está ativado. Isso fez com que todas as portas fossem trancadas. Eu vou ter que encontrar uma forma de desativar cada passagem.";
+        sentences[4] = "Da última vez que estava do laboratório, me lembro de ver diversas pessoas com crachás de identificação. Talvez eu possa encontrar um deles e usar para desativar o sistema de segurança de cada andar. Vale a pena tentar.";
+        sentences[5] = "Espero que eu consiga chegar ao reator principal a tempo de evitar uma catástrofe... Vamos lá.";
 
-        string name = "PABLO";
+        string name = "ASSISTENTE SENIOR";
 
         dialogueBox = GameObject.FindGameObjectWithTag("MessageBox");
         if (dialogueBox != null)

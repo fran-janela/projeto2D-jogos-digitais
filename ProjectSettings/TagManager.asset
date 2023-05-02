@@ -24,6 +24,7 @@ TagManager:
   - LockTesteLab
   - KeyPadSecurityRoom
   - KeyPadLocker13
+  - PasswordBioLab
   layers:
   - Default
   - TransparentFX
